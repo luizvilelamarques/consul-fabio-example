@@ -2,24 +2,13 @@ consulx1:
   image: consul
   ports:
     - "8500:8500" # GUI/management
-
+    
 vertx:
-  image: luizvilelamarques/consul-vertx
-  environment:
-    - porta=2220
+  image: luizvilelamarques/consul-vertx    
   links:
     - consulx1
   ports:
-    - "2220:2220"
-
-
-#registrator:
-#  image: gliderlabs/registrator:v6
-#  volumes:
-#    - /var/run/docker.sock:/tmp/docker.sock
-#  command: "consul://consulx1:8500 -h"
-#  links:
-#    - consulx1
+    - "2222"       
 
 fabio:
   image: fabiolb/fabio
@@ -30,3 +19,8 @@ fabio:
   ports:
     - "9998:9998" # GUI/management
     - "9999:9999" # HTTP exposed
+    
+    
+#docker-compose up -d
+#docker-compose down
+#docker-compose scale vertx=5
