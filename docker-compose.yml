@@ -1,8 +1,5 @@
 consulx1:
-  image: gliderlabs/consul-server:0.5
-  command: "-data-dir /tmp/consul -bootstrap-expect 1 -server"
-  environment:
-    - GOMAXPROCS=10
+  image: consul
   ports:
     - "8500:8500" # GUI/management
 
@@ -15,7 +12,7 @@ consulx1:
 #    - consulx1
 
 fabio:
-  image: magiconair/fabio:1.0.6
+  image: fabiolb/fabio
   volumes:
     - ./fabio:/etc/fabio:ro
   links:
