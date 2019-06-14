@@ -3,6 +3,14 @@ consulx1:
   ports:
     - "8500:8500" # GUI/management
 
+vertx:
+  image: luizvilelamarques/consul-vertx
+  environment:
+    - porta=2220
+  ports:
+    - "2220:2220"
+
+
 #registrator:
 #  image: gliderlabs/registrator:v6
 #  volumes:
