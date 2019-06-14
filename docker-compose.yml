@@ -7,6 +7,8 @@ vertx:
   image: luizvilelamarques/consul-vertx
   environment:
     - porta=2220
+  links:
+    - consulx1
   ports:
     - "2220:2220"
 
