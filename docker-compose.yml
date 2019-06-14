@@ -12,9 +12,9 @@ consulx1:
 #    - consulx1
 
 fabio:
-  image: magiconair/fabio
+  image: fabiolb/fabio
   volumes:
-    - ./fabio/fabio.properties:/etc/fabio/fabio.properties
+    - $PWD/fabio/fabio.properties:/etc/fabio/fabio.properties
   links:
     - consulx1
   ports:
